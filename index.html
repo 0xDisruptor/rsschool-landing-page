@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Resource Coffee House — your favorite coffee and a cozy place to relax.">
+  <title>Resource — Coffee House</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+
+  <script>
+    try {
+      document.documentElement.dataset.theme =
+        localStorage.getItem("coffee-theme") === "dark" ? "dark" : "light";
+    } catch {
+      document.documentElement.dataset.theme = "light";
+    }
+  </script>
+
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="header container" id="header"></header>
+
+  <main class="container" id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <h1 id="hero-title">
+          <em>Enjoy</em> premium coffee at our charming cafe
+        </h1>
+
+        <p>
+          With its inviting atmosphere and delicious coffee options,
+          the Coffee House Resource is a popular destination for coffee
+          lovers and those seeking a warm and inviting space to enjoy
+          their favorite beverage.
+        </p>
+
+        <a class="button hero-button" href="./menu.html">
+          Menu
+          <img class="icon" src="./assets/cup.svg" alt="">
+        </a>
+      </div>
+    </section>
+
+    <section class="section favorites" id="favorite-coffee"
+      aria-labelledby="favorites-title">
+      <h2 id="favorites-title">
+        Choose your <em>favorite</em> coffee
+      </h2>
+
+      <div class="slider" role="region" aria-roledescription="carousel"
+        aria-label="Favorite coffee">
+        <button class="round-button slider-prev" type="button"
+          aria-label="Previous coffee">
+          <img class="icon theme-icon" src="./assets/arrow-left.svg" alt="">
+        </button>
+
+        <div class="slider-window" tabindex="0"
+          aria-label="Coffee slides. Use left and right arrow keys.">
+          <div class="slider-track">
+            <article class="slide" role="group"
+              aria-roledescription="slide" aria-label="1 of 3">
+              <img class="slide-image" src="./assets/coffee-slider-1.png"
+                alt="S’mores Frappuccino with whipped cream"
+                width="480" height="480">
+              <h3>S’mores Frappuccino</h3>
+              <p>
+                This new drink takes an espresso and mixes it with brown
+                sugar and cinnamon before being topped with oat milk.
+              </p>
+              <strong class="price">$5.50</strong>
+            </article>
+
+            <article class="slide" role="group"
+              aria-roledescription="slide" aria-label="2 of 3"
+              aria-hidden="true">
+              <img class="slide-image" src="./assets/coffee-slider-2.png"
+                alt="Caramel Macchiato" width="480" height="480">
+              <h3>Caramel Macchiato</h3>
+              <p>
+                Fragrant and unique classic espresso with rich caramel
+                and delicate milk foam.
+              </p>
+              <strong class="price">$5.00</strong>
+            </article>
+
+            <article class="slide" role="group"
+              aria-roledescription="slide" aria-label="3 of 3"
+              aria-hidden="true">
+              <img class="slide-image" src="./assets/coffee-slider-3.png"
+                alt="Ice coffee" width="480" height="480">
+              <h3>Ice coffee</h3>
+              <p>
+                A refreshing classic espresso with milk and ice,
+                perfect for a warm day.
+              </p>
+              <strong class="price">$4.50</strong>
+            </article>
+          </div>
+        </div>
+
+        <button class="round-button slider-next" type="button"
+          aria-label="Next coffee">
+          <img class="icon theme-icon" src="./assets/arrow-right.svg" alt="">
+        </button>
+      </div>
+
+      <div class="slider-dots" aria-label="Choose a slide">
+        <button class="slider-dot" type="button"
+          aria-label="Show coffee 1" aria-pressed="true"></button>
+        <button class="slider-dot" type="button"
+          aria-label="Show coffee 2" aria-pressed="false"></button>
+        <button class="slider-dot" type="button"
+          aria-label="Show coffee 3" aria-pressed="false"></button>
+      </div>
+
+      <p class="visually-hidden" id="slide-status" aria-live="polite"></p>
+    </section>
+
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <h2 id="about-title">
+        Resource is <em>the perfect and cozy place</em> where you can
+        enjoy a variety of hot beverages, relax, catch up with friends,
+        or get some work done.
+      </h2>
+
+      <div class="gallery">
+        <div class="gallery-column">
+          <div class="gallery-image gallery-tall">
+            <img src="./assets/about-1.jpg"
+              alt="Woman enjoying coffee by the window" loading="lazy">
+          </div>
+
+          <div class="gallery-image gallery-short">
+            <img src="./assets/about-2.jpg"
+              alt="Coffee cups in a cozy cafe" loading="lazy">
+          </div>
+        </div>
+
+        <div class="gallery-column">
+          <div class="gallery-image gallery-short">
+            <img src="./assets/about-3.jpg"
+              alt="Man working in the coffee house" loading="lazy">
+          </div>
+
+          <div class="gallery-image gallery-tall">
+            <img src="./assets/about-4.jpg"
+              alt="Couple spending time together over coffee" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section mobile-app" id="mobile-app"
+      aria-labelledby="app-title">
+      <div class="app-content">
+        <h2 id="app-title"><em>Download</em> our app to start ordering</h2>
+
+        <p>
+          Download the Resource app today and experience the comfort
+          of ordering your favorite coffee from wherever you are
+        </p>
+
+        <div class="store-links">
+          <a class="store-button" href="https://www.apple.com/app-store/"
+            target="_blank" rel="noopener noreferrer">
+            <img src="./assets/apple.svg" alt="" width="36" height="36">
+            <span><small>Available on the</small><strong>App Store</strong></span>
+          </a>
+
+          <a class="store-button" href="https://play.google.com/store/apps"
+            target="_blank" rel="noopener noreferrer">
+            <img src="./assets/google-play.svg" alt="" width="36" height="36">
+            <span><small>Available on</small><strong>Google Play</strong></span>
+          </a>
+        </div>
+      </div>
+
+      <img class="app-image" src="./assets/mobile-screens.png"
+        alt="Resource mobile application displayed on two phones"
+        width="630" height="630" loading="lazy">
+    </section>
+  </main>
+
+  <footer class="footer container" id="contact"></footer>
+</body>
+</html>

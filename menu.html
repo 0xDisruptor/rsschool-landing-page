@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore Resource Coffee House coffee, tea and desserts.">
+  <title>Menu — Resource Coffee House</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+
+  <script>
+    try {
+      document.documentElement.dataset.theme =
+        localStorage.getItem("coffee-theme") === "dark" ? "dark" : "light";
+    } catch {
+      document.documentElement.dataset.theme = "light";
+    }
+  </script>
+
+  <link rel="stylesheet" href="./style.css">
+  <script src="./products.js" defer></script>
+  <script src="./script.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="header container" id="header"></header>
+
+  <main class="container catalog" id="main">
+    <h1 class="catalog-title">
+      Behind each of our cups hides an <em>amazing surprise</em>
+    </h1>
+
+    <div class="categories" role="group" aria-label="Product categories">
+      <button class="category-button" type="button"
+        data-category="coffee" aria-pressed="true">
+        <span class="category-icon">
+          <img src="./assets/category-coffee.svg" alt="" width="20" height="20">
+        </span>
+        Coffee
+      </button>
+
+      <button class="category-button" type="button"
+        data-category="tea" aria-pressed="false">
+        <span class="category-icon">
+          <img src="./assets/category-tea.svg" alt="" width="20" height="20">
+        </span>
+        Tea
+      </button>
+
+      <button class="category-button" type="button"
+        data-category="dessert" aria-pressed="false">
+        <span class="category-icon">
+          <img src="./assets/category-dessert.svg" alt="" width="20" height="20">
+        </span>
+        Dessert
+      </button>
+    </div>
+
+    <p class="visually-hidden" id="catalog-status" role="status"></p>
+    <div class="product-grid" id="product-grid"></div>
+
+    <button class="round-button load-more" id="load-more" type="button"
+      aria-label="Show remaining products" hidden>
+      <img class="icon theme-icon" src="./assets/refresh.svg" alt="">
+    </button>
+
+    <noscript>Please enable JavaScript to view our menu.</noscript>
+  </main>
+
+  <footer class="footer container" id="contact"></footer>
+
+  <dialog class="product-dialog" id="product-dialog"
+    aria-labelledby="modal-title" aria-describedby="modal-description">
+    <div class="modal-layout">
+      <img class="modal-image" id="modal-image" src="" alt="">
+
+      <div class="modal-content">
+        <h2 id="modal-title"></h2>
+        <p id="modal-description"></p>
+
+        <fieldset>
+          <legend>Size</legend>
+          <div class="option-list" id="size-options"></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Additives</legend>
+          <div class="option-list" id="additive-options"></div>
+        </fieldset>
+
+        <div class="modal-total">
+          <span>Total:</span>
+          <output id="modal-price" aria-live="polite"></output>
+        </div>
+
+        <p class="modal-note">
+          All prices include applicable taxes. Order in person at our
+          coffee house. This menu does not accept online payments.
+        </p>
+
+        <button class="button modal-close" id="modal-close" type="button">
+          Close
+        </button>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>
