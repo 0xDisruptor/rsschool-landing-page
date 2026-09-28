@@ -2,6 +2,7 @@
 
 function createProducts(category, rows) {
   const dessert = category === "dessert";
+  const imageExtension = category === "coffee" ? "jpg" : "png";
 
   const quantities = dessert
     ? ["50 g", "100 g", "200 g"]
@@ -19,7 +20,7 @@ function createProducts(category, rows) {
     description,
     price,
     category,
-    image: `./assets/${category}-${index + 1}.jpg`,
+    image: `./assets/${category}-${index + 1}.${imageExtension}`,
     sizes: {
       s: { size: quantities[0], "add-price": "0.00" },
       m: { size: quantities[1], "add-price": "0.50" },
